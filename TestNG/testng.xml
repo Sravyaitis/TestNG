@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Loan Department" parallel="tests" thread-count="1">
+<listeners>
+<listener class-name="Test.Listeners"/>
+</listeners>
+
+	<test name="Personal loan" parallel="classes" thread-count="">
+		<classes>
+			<class name="Test.Day1" />
+			<class name="Test.Day2" />
+			<class name="Test.Day4" />
+			<class name="Test.Day3" />
+		</classes>
+	</test>
+	<test name="Car Loan">
+		<classes>
+			<class name="Test.Day3">
+				<methods>
+					<exclude name="mobile.*" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Home Loan">
+		<classes>
+			<class name="Test.Day4">
+				<methods>
+					<include name="loginAPIHomeLoan" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="test Loan">
+	<parameter name="URL" value="www.google.com" />
+	<parameter name="APIKey/username" value="123456" />
+		<classes>
+			<class name="Test.Day3">
+			</class>
+		</classes>
+	</test>
+</suite>
+
